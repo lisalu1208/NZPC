@@ -33,4 +33,5 @@ result = []
 num_lines = int(input())
 if 0 < num_lines <= 15:
     for i in range(num_lines):
+        break
         
