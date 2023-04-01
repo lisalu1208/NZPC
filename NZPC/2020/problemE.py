@@ -44,9 +44,10 @@ one.
 numbers = input().split(" ")
 num_outfits = int(numbers[0])
 num_days = int(numbers[1])
-becs = [i + 1 for i in range(num_outfits)]
-cas = [j + 1 for j in range(num_outfits)].reverse()
-print(cas)
+outfits_list = [i+1 for i in range(num_outfits)]
+becs = outfits_list
+cas = outfits_list[::-1]
+results = []
 
 if 5 < num_outfits <= 50:
     becs_remove = int(input())
@@ -60,12 +61,12 @@ if 5 < num_outfits <= 50:
             items = input().split(" ")
             becs_outfit = int(items[0])
             cas_outfit = int(items[1])
-            print(becs[becs_outfit])
-            print(cas[cas_outfit])
-            if becs[becs_outfit] == cas[cas_outfit]:
-                print("Day {0} ALERT".format(day+1))
+            if becs.index(becs_outfit) == cas.index(cas_outfit):
+                results.append("Day {0} ALERT".format(day+1))
             else:
-                print("Day {0} OK".format(day+1))
+                results.append("Day {0} OK".format(day+1))
+
+[print(i) for i in results]
 
 
 
