@@ -41,17 +41,33 @@ by OK if the girls have chosen different outfits, ALERT if they have chosen the 
 one.
 """
 
-numbers = input().split()
+numbers = input().split(" ")
 num_outfits = int(numbers[0])
 num_days = int(numbers[1])
 becs = [i + 1 for i in range(num_outfits)]
 cas = [j + 1 for j in range(num_outfits)].reverse()
+print(cas)
 
 if 5 < num_outfits <= 50:
     becs_remove = int(input())
     cas_remove = int(input())
-    # if 0 <= becs_remove <= num_outfits and 0 <= cas_remove <= num_outfits:
-        # if becs_remove != 0:
+    if 0 <= becs_remove <= num_outfits and 0 <= cas_remove <= num_outfits:
+        if becs_remove > 0:
+            becs.remove(becs[becs_remove-1])
+        if cas_remove > 0:
+            cas.remove(cas[cas_remove-1])
+        for day in range(num_days):
+            items = input().split(" ")
+            becs_outfit = int(items[0])
+            cas_outfit = int(items[1])
+            print(becs[becs_outfit])
+            print(cas[cas_outfit])
+            if becs[becs_outfit] == cas[cas_outfit]:
+                print("Day {0} ALERT".format(day+1))
+            else:
+                print("Day {0} OK".format(day+1))
+
+
 
 
 
