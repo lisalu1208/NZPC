@@ -61,7 +61,7 @@ if 5 < num_outfits <= 50:
             items = input().split(" ")
             becs_outfit = int(items[0])
             cas_outfit = int(items[1])
-            if becs.index(becs_outfit) == cas.index(cas_outfit):
+            if becs[becs_outfit - 1] == cas[cas_outfit - 1]:
                 results.append("Day {0} ALERT".format(day+1))
             else:
                 results.append("Day {0} OK".format(day+1))
