@@ -33,8 +33,11 @@ line = input()
 
 while line != "0 0 0":
     start = int(line.split(" ")[0])
-    difference = int(line.split(" "))[1]
-
-    
+    difference = int(line.split(" ")[1])
+    test = int(line.split(" ")[2])
+    if (test - start) % difference == 0:
+        results.append("Term {0}".format(int((test-start) / difference + 1)))
+    else:
+        results.append("Not in sequence")
     line = input()
 [print(i) for i in results]
